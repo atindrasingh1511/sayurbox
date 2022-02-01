@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "front-end.fullname" . }}
+  name: {{ include "sayurbox.fullname" . }}
 
   labels:
 
-    {{- include "front-end.labels" . | nindent 4 }}
+    {{- include "sayurbox.labels" . | nindent 4 }}
 
 spec:
 
@@ -23,7 +23,7 @@ spec:
 
     matchLabels:
 
-      {{- include "front-end.selectorLabels" . | nindent 6 }}
+      {{- include "sayurbox.selectorLabels" . | nindent 6 }}
 
   template:
 
@@ -39,7 +39,7 @@ spec:
 
       labels:
 
-        {{- include "front-end.selectorLabels" . | nindent 8 }}
+        {{- include "sayurbox.selectorLabels" . | nindent 8 }}
 
     spec:
 
@@ -51,7 +51,7 @@ spec:
 
       {{- end }}
 
-      serviceAccountName: {{ include "front-end.serviceAccountName" . }}
+      serviceAccountName: {{ include "sayurbox.serviceAccountName" . }}
 
       securityContext:
 
@@ -107,7 +107,7 @@ spec:
 
             - configMapRef:
 
-               name: {{ include "front-end.fullname" . }}
+               name: {{ include "sayurbox.fullname" . }}
 
           resources:
 

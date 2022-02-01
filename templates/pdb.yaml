@@ -4,11 +4,11 @@ kind: PodDisruptionBudget
 
 metadata:
 
-    name: {{ include "front-end.fullname" . }}
+    name: {{ include "sayurbox.fullname" . }}
 
     labels:
 
-    {{- include "front-end.labels" . | nindent 4 }}
+    {{- include "sayurbox.labels" . | nindent 4 }}
 
 spec:
 
@@ -16,7 +16,7 @@ spec:
 
       matchLabels:
 
-        app.kubernetes.io/name: {{ include "front-end.fullname" . }}
+        app.kubernetes.io/name: {{ include "sayurbox.fullname" . }}
 
         app.kubernetes.io/instance: {{ .Release.Name }}
 

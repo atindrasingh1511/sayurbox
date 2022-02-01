@@ -4,11 +4,11 @@ kind: Service
 
 metadata:
 
-  name: {{ include "front-end.fullname" . }}
+  name: {{ include "sayurbox.fullname" . }}
 
   labels:
 
-    {{- include "front-end.labels" . | nindent 4 }}
+    {{- include "sayurbox.labels" . | nindent 4 }}
 
 spec:
 
@@ -26,7 +26,7 @@ spec:
 
   selector:
 
-    {{- include "front-end.selectorLabels" . | nindent 4 }}
+    {{- include "sayurbox.selectorLabels" . | nindent 4 }}
 
 status:
 

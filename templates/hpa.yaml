@@ -6,11 +6,11 @@ kind: HorizontalPodAutoscaler
 
 metadata:
 
-  name: {{ include "front-end.fullname" . }}
+  name: {{ include "sayurbox.fullname" . }}
 
   labels:
 
-    {{- include "front-end.labels" . | nindent 4 }}
+    {{- include "sayurbox.labels" . | nindent 4 }}
 
 spec:
 
@@ -20,7 +20,7 @@ spec:
 
     kind: Deployment
 
-    name: {{ include "front-end.fullname" . }}
+    name: {{ include "sayurbox.fullname" . }}
 
   minReplicas: {{ .Values.autoscaling.minReplicas }}
 
