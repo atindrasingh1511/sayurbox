@@ -1,0 +1,23 @@
+apiVersion: policy/v1
+
+kind: PodDisruptionBudget
+
+metadata:
+
+    name: {{ include "front-end.fullname" . }}
+
+    labels:
+
+    {{- include "front-end.labels" . | nindent 4 }}
+
+spec:
+
+    selector:
+
+      matchLabels:
+
+        app.kubernetes.io/name: {{ include "front-end.fullname" . }}
+
+        app.kubernetes.io/instance: {{ .Release.Name }}
+
+    minAvailable: {{ .Values.autoscaling.pdbMinAvailable }}
